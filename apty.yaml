@@ -1,0 +1,22 @@
+---
+- name: Playbook - Install figlet
+  hosts: planetexpress:!farnsworth   # remove farnsworth from the list of available hosts
+  connection: ssh     # default is to use the connection plugin ssh.py
+  gather_facts: yes   # default is yes
+
+  tasks:
+  - name: using apt to install figlet
+    apt:
+        name: figlet
+        state: present    # this will INSTALL the application
+    become: yes
+  - name: using apt to install cowsay
+    apt:
+        name: cowsay
+        state: present    # this will INSTALL the application
+    become: yes
+  - name: using apt to install bastet 
+    apt:
+        name: bastet 
+        state: present    # this will INSTALL the application
+    become: yes
